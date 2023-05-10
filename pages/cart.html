@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<link rel="stylesheet" href="../css/cart.css">
+  <link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+  <!-- Link to CSS file for tablet devices -->
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="(min-width: 768px)">
+
+	<!-- Link to CSS file for phone devices -->
+	<link rel="stylesheet" type="text/css" href="../css/phone.css" media="(max-width: 767px)">
+    <script src="scripts/script.js"></script>
+    <script src="cart.js"></script>
+    <!-- HEADER -->
+	<div id="navbar-container"></div>
+    <script>
+        
+		// create a new XMLHttpRequest object
+		var xhr = new XMLHttpRequest();
+
+		// set the URL of the file to be loaded
+		xhr.open('GET', '../pages/header.html');
+
+		// when the file is loaded, insert its content into the "navbar-container" div
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				document.getElementById('navbar-container').innerHTML = xhr.responseText;
+			}
+		};
+
+		// send the request to load the file
+		xhr.send();
+	</script>
+</head>
+<body>
+    
+
+	
+	<script>
+		// Check if the user is logged in and has access to the cart
+		const access = localStorage.getItem("access"); // Get the access status from local storage
+		if (!access || access !== "Y") { // If the access status is not "Y"
+			alert("You must be logged in to access this page.");
+			window.location.href = "login.html"; // Redirect the user to the login page
+		}
+	</script>
+    <div container="r">
+    <div class="cart">
+      <h2>Shopping Cart</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="../images/plant1.png" alt="lily" style="width: 70px; height: 70px;"></td>
+            <td>Lily <br> <br><span style="font-size: 0.6em;">Remove</span></td>
+            <td>-   2   +</td>
+            <td>Rs. 500</td>
+            <td>Rs. 1000</td>
+          </tr>
+          <tr>
+            <td><img src="../images/plant2.png" alt="rose" style="width: 70px; height: 70px;"></td>
+            <td>Rose<br> <br><span style="font-size: 0.6em;">Remove</span></td>
+            <td>-   2   +</td>
+            <td>Rs. 600</td>
+            <td>Rs. 1200</td>
+          </tr>
+          <tr>
+            <td><img src="../images/plant3.png" alt="lotus" style="width: 70px; height: 70px;"></td>
+            <td>Lotus<br> <br><span style="font-size: 0.6em;">Remove</span></td>
+            <td>-   2   +</td>
+            <td>Rs. 500</td>
+            <td>Rs. 1000</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <br>
+        <form>
+          <label for="shipping">Shipping:</label>
+          <select id="shipping" name="shipping">
+            <option value="0">Standard Shipping (Rs. 100)</option>
+            <option value="5">Express Shipping (Rs. 150)</option>
+            <option value="10">Priority Shipping (Rs .250)</option>
+          </select>
+        </form>
+        <br>
+        <form>
+          <label for="promo-code">Promo Code:</label>
+          <input type="text" id="promo-code" name="promo-code">
+          <button type="submit">Apply</button>
+        </form>
+        <br>
+        <div class="total-fee">
+          <p>Total: Rs. 3300</p>
+        </div>
+        <br>
+        <button class="checkout-btn" type="button">Checkout</button>
+      </div>
+
+      
+    </div>
+    
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("../pages/footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+</html>

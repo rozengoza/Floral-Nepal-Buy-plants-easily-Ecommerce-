@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<!-- Link to CSS file for tablet devices -->
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="(min-width: 768px)">
+
+	<!-- Link to CSS file for phone devices -->
+	<link rel="stylesheet" type="text/css" href="../css/phone.css" media="(max-width: 767px)">
+	<script src="cart.js"></script>
+
+	<script>
+		// create a new XMLHttpRequest object
+		var xhr = new XMLHttpRequest();
+
+		// set the URL of the file to be loaded
+		xhr.open('GET', '../pages/header.html');
+
+		// when the file is loaded, insert its content into the "navbar-container" div
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				document.getElementById('navbar-container').innerHTML = xhr.responseText;
+			}
+		};
+
+		// send the request to load the file
+		xhr.send();
+	</script>
+	<script src="scripts/script.js"></script>
+</head>
+<body>
+	<!-- HEADER -->
+	<div id="navbar-container"></div>
+    <h1 class="AboutUs"></h1>
+
+	<style>
+		.container {
+		  display: flex;
+		  height: 100%;
+		}
+		
+		[container="n1"] {
+		  flex: 1;
+		  background-color:white;
+		  width:50%;
+		  
+		  margin-right: 0px;
+		}
+		
+		[container="n2"] {
+		  flex: 1;
+		  background-color: #ddd;
+		}
+		
+		.image {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100%;
+		  margin-top:0px;
+		}
+		
+		.image img {
+		  max-width: 100%;
+		  max-height: 100%;
+		}
+	  </style>
+	  
+	  <div class="container">
+		<div container="n1">
+		  <h1 class="AboutUs">About Us</h1>
+		  <div class="blog">
+			<p>Floral Nepal is a unique business that combines a passion for nature with a commitment to environmental conservation and sustainability. The company aims to provide high-quality plants and products to its customers, while also contributing to the conservation of natural habitats and promoting sustainable practices.<br> Floral Nepal is also dedicated to raising awareness about the importance of protecting the environment through various programs and initiatives. The company specializes in selling a wide range of plants and fertilizers, as well as offering services such as afforestation and clean environment preservation.</p>
+		  </div>
+		</div>
+		<div container="n2">
+		  <div class="image">
+			<img src="../images/blog.png" alt="blogpic">
+		  </div>
+		</div>
+	  </div>
+	  
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("../pages/footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>

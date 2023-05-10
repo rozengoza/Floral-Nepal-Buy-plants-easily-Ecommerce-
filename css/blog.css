@@ -1,0 +1,15 @@
+.blog {
+    display: flex;
+    width: 50%;
+  }
+  
+  .blog p {
+    flex: 1;
+  }
+  
+  .AboutUs{
+    margin-left: 100px;
+  }
+  .image{
+    margin-top: 300px;
+  }

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	<link rel="stylesheet" href="styles/login.css">
+	<!-- Link to CSS file for tablet devices -->
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="(min-width: 768px)">
+
+	<!-- Link to CSS file for phone devices -->
+	<link rel="stylesheet" type="text/css" href="../css/phone.css" media="(max-width: 767px)">
+	<script>
+		// create a new XMLHttpRequest object
+		var xhr = new XMLHttpRequest();
+
+		// set the URL of the file to be loaded
+		xhr.open('GET', '../pages/header.html');
+
+		// when the file is loaded, insert its content into the "navbar-container" div
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				document.getElementById('navbar-container').innerHTML = xhr.responseText;
+			}
+		};
+
+		// send the request to load the file
+		xhr.send();
+		function showPassword() {
+			var password = document.getElementById("password");
+			if (password.type === "password") {
+				password.type = "text";
+			} else {
+				password.type = "password";
+			}
+		}
+	</script>
+    <style>
+	.login {
+		background-color: #f2f2f2;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		width: 400px;
+		margin: 0 auto;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	label {
+		margin-bottom: 10px;
+	}
+
+	input[type="text"], input[type="password"] {
+		padding: 8px;
+		border-radius: 3px;
+		border: none;
+		margin-bottom: 15px;
+		background-color: black;
+		color:white;
+	}
+
+	input[type="submit"] {
+		background-color:black;
+		color: white;
+		padding: 10px;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+	input[type="submit"]:hover {
+		background-color: rgb(185, 180, 180);
+		color:black;
+	}
+
+	.text {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+    .password-field {
+	display: flex;
+	align-items: center;
+}
+
+input[type="password"] {
+	flex: 1;
+	padding: 8px;
+	border-radius: 3px;
+	border: none;
+	margin-right: 15px;
+}
+
+label[for="show-password"] {
+	margin: 0;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+	<div id="navbar-container"></div>
+    
+	<style>
+		.container {
+		  display: flex;
+		  width: 80%;
+		  margin: 0 auto;
+		}
+		
+		[container="n1"] {
+		  flex: 1;
+		  
+		}
+		
+		[container="n2"] {
+		  flex: 1;
+		  height: 600px;
+		  background-color: #ddd;
+		  margin-left:-5px;
+		}
+	  
+		form {
+		  max-width: 400px;
+		  margin: 0 auto;
+		}
+		
+		@media only screen and (max-width: 768px) {
+		  .container {
+			flex-wrap: wrap;
+		  }
+		  [container="n1"], [container="n2"] {
+			width: 100%;
+		  }
+		}
+	  </style>
+	  
+	  <div class="container">
+		<div container="n1">
+		  <img src="../images/login.png" style="width: 100%; height: 600px;"> 
+		</div>
+		<div container="n2">
+			<section class="text" style="color:green; font-size:18px; font-weight:lighter; font-family:Arial, Helvetica, sans-serif;">
+				<h1>Floral Nepal</h1>
+			</section>
+		 
+			<form id="login-form">
+			  <label for="username">Email</label>
+			  <input type="text" id="username" name="username"><br>
+	  
+			  <label for="password">Password</label>
+			  <div class="password-field">
+				<input type="password" id="password" name="password">
+				<label for="show-password">
+				  <input type="checkbox" id="show-password" onclick="showPassword()">
+				  Show Password
+				</label>
+			  </div>
+	  
+			  <input type="submit" id="login-button" value="Login">
+			  <div class="sign-up">
+				<p>Don't have an account yet?<a href="../pages/signup.html"> Sign Up </a> </p>
+			  </div>
+			</form>
+		  
+		</div>
+	  </div>
+	  
+    
+	<script>
+		// Define your valid username and password
+		const validUsername = "myusername@gmail.com";
+		const validPassword = "mypassword";
+
+		// Get the form and the login button
+		const form = document.getElementById("login-form");
+		const loginButton = document.getElementById("login-button");
+
+		// Add an event listener to the form submit event
+		form.addEventListener("submit", function(event) {
+			event.preventDefault(); // Prevent the form from submitting
+
+			// Get the username and password fields
+			const usernameField = form.elements["username"];
+			const passwordField = form.elements["password"];
+
+			// Get the values of the username and password fields
+			const username = usernameField.value;
+			const password = passwordField.value;
+
+// Check if the username and password are valid
+if (username === validUsername && password === validPassword) {
+    alert("Login successful!");
+    // Set the access status to "Y" in local storage
+    localStorage.setItem("access", "Y");
+    // Redirect the user to the home page
+    window.location.href = "home.html";
+} else {
+    alert("Invalid username or password. Please try again.");
+    // Clear the password field
+    passwordField.value = "";
+}
+});
+</script>
+
+<div id="4"></div>
+<script>
+	load("../pages/footer.html");
+	function load(url)
+	{
+		req = new XMLHttpRequest();
+		req.open("GET", url, false);
+		req.send(null);
+		document.getElementById(4).innerHTML = req.responseText;
+	}
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../css/products.css">
+	<!-- Link to CSS file for tablet devices -->
+	<link rel="stylesheet" type="text/css" href="../css/tablet.css" media="(min-width: 768px)">
+
+	<!-- Link to CSS file for phone devices -->
+	<link rel="stylesheet" type="text/css" href="../css/phone.css" media="(max-width: 767px)">
+	<script src="cart.js"></script>
+
+	<script>
+		// create a new XMLHttpRequest object
+		var xhr = new XMLHttpRequest();
+
+		// set the URL of the file to be loaded
+		xhr.open('GET', '../pages/header.html');
+
+		// when the file is loaded, insert its content into the "navbar-container" div
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				document.getElementById('navbar-container').innerHTML = xhr.responseText;
+			}
+		};
+
+		// send the request to load the file
+		xhr.send();
+	</script>
+	<script src="scripts/script.js"></script>
+</head>
+<body>
+	<!-- HEADER -->
+	<div id="navbar-container"></div>
+	
+	
+    <!-- PAGE CONTENT -->
+	<div id="page-content">
+		<!-- ADD YOUR E-COMMERCE COMPONENTS HERE -->
+        <section id="hero-section">
+            <div class= "long-photo">
+                <img src="../images/hero.png" alt="Plant 1">
+            </div>
+
+        </section>
+		<div id="sectionsMain">
+			<h1>Best Seller</h1>
+			</div>
+
+			
+			<section id="plants">
+				<div class="advertisement">
+					<img src="../images/plant1.png" alt="Plant Image" style="width: 184px; height: 170px;">
+					<div class="details">
+						<h3>Lily</h3>
+						<p>RS. 500</p>
+						<div class="cart-button">
+							<button class="add-to-cart" id="lily" onclick="addToCart('Lily')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+								Add to Cart
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="advertisement">
+					<img src="../images/plant2.png" alt="Plant Image" style="width: 184px; height: 170px;">
+					<div class="details">
+						<h3>Rose</h3>
+						<p>RS. 600</p>
+						<div class="cart-button">
+							<button class="add-to-cart" id="rose" onclick="addToCart('Rose')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+								Add to Cart
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="advertisement">
+					<img src="../images/plant3.png" alt="Plant Image" style="width: 184px; height: 170px;">
+					<div class="details">
+						<h3>Lotus</h3>
+						<p>RS. 500</p>
+						<div class="cart-button">
+							<button class="add-to-cart" id="lotus" onclick="addToCart('Lotus')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+								Add to Cart
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="advertisement">
+					<img src="../images/plant4.png" alt="Plant Image" style="width: 184px; height: 170px;">
+					<div class="details">
+						<h3>Marigold</h3>
+						<p>RS. 300</p>
+						<div class="cart-button">
+							<button class="add-to-cart" id="marigold" onclick="addToCart('Marigold')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; transition: background-color 0.5s ease;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+								Add to Cart
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<script>
+				function addToCart(item) {
+					alert(item + " added to cart!");
+				}
+			</script>
+			
+
+			<div id="sectionsMain">
+			<h1>New Products</h1>
+			</div>
+
+			<section id="plants">
+            <div class="advertisement">
+				<img src="../images/plant5.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                <div class="details">
+				<h3>Gardenia</h3>
+				<p>RS. 1500</p>
+				<div class="cart-button">
+					<button class="add-to-cart" id="gardenia" onclick="addToCart('Gardenia')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+    				transition: background-color 0.5s ease;" 
+    				onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+   					onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+    				Add to Cart
+						</button>
+				</div>
+                </div>
+			</div>
+			<div class="advertisement">
+				<img src="../images/plant6.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                <div class="details">
+				<h3>White Cone Flower</h3>
+				<p>RS. 1200</p>
+				<div class="cart-button">
+					<button class="add-to-cart" id="coneflower" onclick="addToCart('Cone Flower')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+    				transition: background-color 0.5s ease;" 
+    				onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+   					onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+    				Add to Cart
+						</button>
+				</div>
+                </div>
+			</div>
+            <div class="advertisement">
+				<img src="../images/plant7.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                <div class="details">
+				<h3>Pompons</h3>
+				<p>RS. 1000</p>
+				<div class="cart-button">
+					<button class="add-to-cart" id="pompons" onclick="addToCart('Pompons')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+    				transition: background-color 0.5s ease;" 
+    				onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+   					onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+    				Add to Cart
+						</button>
+				</div>
+                </div>
+			</div>
+            <div class="advertisement">
+				<img src="../images/plant8.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                <div class="details">
+				<h3>Decorative Blooms</h3>
+				<p>RS. 800</p>
+				<div class="cart-button">
+					<button class="add-to-cart" id="decorativeblooms" onclick="addToCart('Decorative Blooms')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+    				transition: background-color 0.5s ease;" 
+    				onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+   					onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+    				Add to Cart
+						</button>
+				</div>
+                </div>
+			</div>
+
+			</section>
+			<script>
+				function addToCart(item) {
+					alert(item + " added to cart!");
+				}
+			</script>
+
+            <div id="sectionsMain">
+                <h1>New Products</h1>
+                </div>
+    
+                <section id="plants">
+                <div class="advertisement">
+                    <img src="../images/Bacopa.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                    <div class="details">
+                    <h3>Bacopa</h3>
+                    <p>RS. 1100</p>
+                    <div class="cart-button">
+                        <button class="add-to-cart" id="bacopa" onclick="addToCart('Bacopa')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+                        transition: background-color 0.5s ease;" 
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+                           onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                        Add to Cart
+                            </button>
+                    </div>
+                    </div>
+                </div>
+                <div class="advertisement">
+                    <img src="../images/BlueFescue.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                    <div class="details">
+                    <h3>Blue Fescue</h3>
+                    <p>RS. 1200</p>
+                    <div class="cart-button">
+                        <button class="add-to-cart" id="bluefescue" onclick="addToCart('Blue Fescue')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+                        transition: background-color 0.5s ease;" 
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+                           onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                        Add to Cart
+                            </button>
+                    </div>
+                    </div>
+                </div>
+                <div class="advertisement">
+                    <img src="../images/Coleus.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                    <div class="details">
+                    <h3>Coleus</h3>
+                    <p>RS. 1300</p>
+                    <div class="cart-button">
+                        <button class="add-to-cart" id="coleus" onclick="addToCart('Coleus')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+                        transition: background-color 0.5s ease;" 
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+                           onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                        Add to Cart
+                            </button>
+                    </div>
+                    </div>
+                </div>
+                <div class="advertisement">
+                    <img src="../images/FalseIndigo.png" alt="Plant Image" style="width: 184px; height: 170px;">
+                    <div class="details">
+                    <h3>False Indigo</h3>
+                    <p>RS. 1500</p>
+                    <div class="cart-button">
+                        <button class="add-to-cart" id="falseindigo" onclick="addToCart('False Indigo')" style="background-color: black; color: white; width:100px; height:30px; border-radius: 5px; 
+                        transition: background-color 0.5s ease;" 
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';" 
+                           onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                        Add to Cart
+                            </button>
+                    </div>
+                    </div>
+                </div>
+                </section>
+				<script>
+					function addToCart(item) {
+						alert(item + " added to cart!");
+					}
+				</script>
+
+
+                <section id="tail-section">
+                    <div class= "long-photo">
+                        <img src="../images/tail.png" alt="Plant 1">
+                    </div>
+        
+                </section>
+	</div>
+	
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("../pages/footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+	
+</body>
+</html>

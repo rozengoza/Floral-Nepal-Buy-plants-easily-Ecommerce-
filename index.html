@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="navbar"></div>
+
+  <!-- HOME -->
+  <div id="home-content"></div>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <script>
+    // create a new XMLHttpRequest object for header content
+    var xhrHeader = new XMLHttpRequest();
+
+    // set the URL of the file to be loaded
+    xhrHeader.open('GET', 'pages/header.html');
+
+    // when the file is loaded, insert its content into the "navbar" div
+    xhrHeader.onload = function() {
+      if (xhrHeader.status === 200) {
+        document.getElementById('navbar').innerHTML = xhrHeader.responseText;
+      }
+    };
+
+    // send the request to load the file
+    xhrHeader.send();
+    // create a new XMLHttpRequest object for home page content
+    var xhrHome = new XMLHttpRequest();
+
+    // set the URL of the file to be loaded
+    xhrHome.open('GET', 'pages/home.html');
+
+    // when the file is loaded, insert its content into the appropriate div or element
+    xhrHome.onload = function() {
+      if (xhrHome.status === 200) {
+      document.getElementById('home-content').innerHTML = xhrHome.responseText;
+      }
+    };
+
+    // send the request to load the file
+    xhrHome.send();
+
+
+    // create a new XMLHttpRequest object for footer content
+    var xhrFooter = new XMLHttpRequest();
+
+    // set the URL of the file to be loaded
+    xhrFooter.open('GET', 'pages/footer.html');
+
+    // when the file is loaded, insert its content into the "footer" div
+    xhrFooter.onload = function() {
+      if (xhrFooter.status === 200) {
+        document.getElementById('footer').innerHTML = xhrFooter.responseText;
+      }
+    };
+
+    // send the request to load the file
+    xhrFooter.send();
+  </script>
+  
+  <script src="scripts/script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  background-color: lightgray;
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.aboutUs,
+.quickLinks,
+.ourInfo,
+.socialMedia {
+  flex-basis:20%;
+  margin-bottom: 50px;
+
+} 
+
+.blog {
+  margin-top:10px;
+  margin-left:0px;
+  display: flex;
+  align-items: center;
+
+}
+
+.blog .logo-pic img {
+  width :200px;
+  height:100px;
+  
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.quickLinks{
+  margin-left:0px;
+}
+
+.quickLinks ul,
+.ourInfo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quickLinks h3,
+.ourInfo h4,
+.socialMedia h5 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.socialMedia ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialMedia ul li {
+  margin-right: 10px;
+}
+
+.socialMedia ul li:last-child {
+  margin-right: 0;
+}
+
+.socialMedia ul li a {
+  color: black;
+}
+
+.socialMedia ul li a:hover {
+  color: gray;
+}
+
+.copyRight {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+}
+
+

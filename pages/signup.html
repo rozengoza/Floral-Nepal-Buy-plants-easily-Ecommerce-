@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	<link rel="stylesheet" href="styles/login.css">
+	<script>
+		// create a new XMLHttpRequest object
+		var xhr = new XMLHttpRequest();
+
+		// set the URL of the file to be loaded
+		xhr.open('GET', '../pages/header.html');
+
+		// when the file is loaded, insert its content into the "navbar-container" div
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				document.getElementById('navbar-container').innerHTML = xhr.responseText;
+			}
+		};
+
+		// send the request to load the file
+		xhr.send();
+		function showPassword() {
+			var password = document.getElementById("password");
+			if (password.type === "password") {
+				password.type = "text";
+			} else {
+				password.type = "password";
+			}
+		}
+	</script>
+    <style>
+		.container {
+		  display: flex;
+		  width: 80%;
+		  margin: 0 auto;
+		}
+		
+		[container="n1"] {
+		  flex: 1;
+		  width:50%;
+		  
+		}
+		
+		[container="n2"] {
+		  flex: 1;
+		  width:50%;
+		  height: 600px;
+		  background-color: #ddd;
+		  margin-left:-5px;
+		}
+	  
+		form {
+		  max-width: 400px;
+		  margin: 0 auto;
+		}
+		
+		@media only screen and (max-width: 768px) {
+		  .container {
+			flex-wrap: wrap;
+		  }
+		  [container="n1"], [container="n2"] {
+			width: 100%;
+		  }
+		}
+	.login {
+		background-color: #f2f2f2;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		width: 400px;
+		margin: 0 auto;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	label {
+		margin-bottom: 10px;
+	}
+
+	input[type="text"], input[type="password"], input[type="integer"] {
+		padding: 8px;
+		border-radius: 3px;
+		background-color:black;
+		color:white;
+		border: none;
+		margin-bottom: 15px;
+	}
+
+	input[type="submit"] {
+		background-color:black;
+		color: white;
+		padding: 10px;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+	input[type="submit"]:hover {
+		background-color: rgb(185, 180, 180);
+		color:black;
+	}
+
+	.text {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+    .password-field {
+	display: flex;
+	align-items: center;
+}
+
+input[type="password"] {
+	flex: 1;
+	padding: 8px;
+	border-radius: 3px;
+	border: none;
+	margin-right: 15px;
+}
+
+label[for="show-password"] {
+	margin: 0;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+	<div id="navbar-container"></div>
+<div class="container">
+  <div container="n1">
+    <img src="../images/signup.png" style="width: 100%; height: 600px;">
+  </div>
+  <div container="n2">
+    <section class="text" style="color:green; font-size:18px; font-weight:lighter; font-family:Arial, Helvetica, sans-serif;">
+      <h1>Floral Nepal </h1>
+    </section>
+    <div class="login">
+      <form id="login-form">
+        <label for="username">Email</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password</label>
+        <div class="password-field">
+          <input type="password" id="password" name="password">
+          <label for="show-password">
+            <input type="checkbox" id="show-password" onchange="showPassword()">
+            Show Password
+          </label>
+        </div>
+
+        <label for="phoneNo">Phone Number</label>
+        <input type="tel" id="phoneNo" name="phoneNo"><br>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address"><br>
+
+        <input type="submit" id="login-button" value="SignUp">
+        <div class="sign-up">
+          <p>Already have an account?<a href="../pages/login.html"> Login</a> </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="footer-container"></div>
+<script>
+  load("../pages/footer.html");
+  function load(url)
+  {
+    req = new XMLHttpRequest();
+    req.open("GET", url, false);
+    req.send(null);
+    document.getElementById("footer-container").innerHTML = req.responseText;
+  }
+  
+  function showPassword() {
+    var password = document.getElementById("password");
+    var checkbox = document.getElementById("show-password");
+    if (checkbox.checked) {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
+  }
+</script>
+
+	

@@ -1,0 +1,28 @@
+ /* CSS for smartphones */
+@media screen and (max-width: 767px) {
+    /* style modifications here */
+    .long-photo img {
+      max-width: 100%;
+      height: auto;
+    }
+    #sectionsMain h1 {
+      font-size: 28px;
+    }
+    .details {
+      width: 100%;
+      text-align: center;
+    }
+    .cart-button button {
+      width: 90%;
+    }
+    header {
+        font-size: 24px;
+        }
+        
+        /* To make the table scrollable on small screens */
+        table {
+        overflow-x: auto;
+        }
+        
+        }
+  
